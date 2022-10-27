@@ -2,3 +2,4 @@ Django==4.1.2
 pytest==6.2.5
 pytest-cov==3.0.0
 coverage==5.5
+pytest_django==4.5.2
