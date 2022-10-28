@@ -21,6 +21,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Pytest
         run: pytest --cov=./ --cov-report=xml --doctest-modules
+      - name: Override Coverage Source Path for Sonar
+        run: sed -i "s/<source>\/home\/runner\/work\/repo<\/source>/<source>\/github\/workspace<\/source>/g" /home/runner/work/repo/path/to/coverage.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
