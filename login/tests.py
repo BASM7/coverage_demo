@@ -7,4 +7,4 @@ class EmailVerificationTest(TestCase):
         pass
 
     def test_email_verified(self):
-        self.assertTrue(True)
+        assert True == True
