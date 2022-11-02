@@ -20,7 +20,7 @@ jobs:
       - name: Install packages
         run: pip install -r requirements.txt
       - name: Run Pytest
-        run: pytest --cov=./ --cov-report=xml --doctest-modules
+        run: pytest --cov=./ --cov-report=xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
