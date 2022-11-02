@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework import generics, status
-from login.models import KaizenUser
-from login.serializers import KaizenUserCreateSerializer, KaizenUserDetailSerializer, KaizenUserVerifySerializer
+from signup.models import KaizenUser
+from signup.serializers import KaizenUserCreateSerializer, KaizenUserDetailSerializer, KaizenUserVerifySerializer
 
 
 class KaizenUserDetailAPIView(generics.RetrieveAPIView):

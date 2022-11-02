@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import KaizenUser
+from signup.models import KaizenUser
 
 @admin.register(KaizenUser)
 class KaizenUserAdmin(admin.ModelAdmin):

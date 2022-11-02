@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import KaizenUser
+from signup.models import KaizenUser
 
 
 class KaizenUserCreateSerializer(serializers.ModelSerializer):
