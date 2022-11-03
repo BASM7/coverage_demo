@@ -10,7 +10,7 @@ from signup.serializers import KaizenUserCreateSerializer, KaizenUserDetailSeria
 class SignUpTestCase(APITestCase):
     """Tests for the SignUp API"""
     pass
-    
+    """
     def test_signup_register(self):
         data = {'username': 'Alonso', 'email': 'alonso.moreno@mailinator.com', 'password': 'qwerty'}
         response = self.client.post('/api/create/', data)
@@ -29,4 +29,5 @@ class SignUpTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertTrue(response.data.get('is_verified'))
         self.assertEqual(response.data.get('verification_code'), 'EXPIRED')
-        
+    """
+    
