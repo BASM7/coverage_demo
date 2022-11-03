@@ -8,20 +8,26 @@ from signup.serializers import KaizenUserCreateSerializer, KaizenUserDetailSeria
 
 
 class SignUpTestCase(APITestCase):
+    """Tests for the SignUp API"""
+
     def test_signup_register(self):
         data = {'username': 'Alonso', 'email': 'alonso.moreno@mailinator.com', 'password': 'qwerty'}
         response = self.client.post('/api/create/', data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-    def test_signup_register_is_left_unverified(self):
-        data = {'username': 'Alonso', 'email': 'alonso.moreno@mailinator.com', 'password': 'qwerty'}
-        response = self.client.post('/api/create/', data)
-        print(response)
         self.assertFalse(response.data.get('is_verified'))
+        self.assertNotEqual(response.data.get('verification_code'), None)
 
-    def test_signup_register_verification_code_not_empty(self):
+
+    def test_retrieve_verification(self):
         data = {'username': 'Alonso', 'email': 'alonso.moreno@mailinator.com', 'password': 'qwerty'}
         response = self.client.post('/api/create/', data)
-        print(response)
-        self.assertNotEqual(response.data.get('verification_code'), None)
+
+        verification_code = response.data.get('verification_code')
+
+        response = self.client.get('/api/verify/{}'.format(verification_code))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue(response.data.get('is_verified'))
+        self.assertEqual(response.data.get('verification_code'), 'EXPIRED')
+
+
 
