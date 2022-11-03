@@ -10,7 +10,8 @@ from signup.serializers import KaizenUserCreateSerializer, KaizenUserDetailSeria
 class SignUpTestCase(APITestCase):
     """Tests for the SignUp API"""
     
-    pass
+    def test_dummy(self):
+        self.assertTrue(True)
     """
     
     def test_signup_register(self):
