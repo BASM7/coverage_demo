@@ -13,7 +13,7 @@ class SignUpTestCase(APITestCase):
     def test_dummy(self):
         self.assertTrue(True)
     
-    """
+    
     def test_signup_register(self):
         data = {'username': 'Alonso', 'email': 'alonso.moreno@mailinator.com', 'password': 'qwerty'}
         response = self.client.post('/api/create/', data)
@@ -21,7 +21,7 @@ class SignUpTestCase(APITestCase):
         self.assertFalse(response.data.get('is_verified'))
         self.assertNotEqual(response.data.get('verification_code'), None)
     
-    
+    """
     def test_retrieve_verification(self):
         data = {'username': 'Alonso', 'email': 'alonso.moreno@mailinator.com', 'password': 'qwerty'}
         response = self.client.post('/api/create/', data)
