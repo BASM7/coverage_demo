@@ -21,7 +21,7 @@ class SignUpTestCase(APITestCase):
         self.assertFalse(response.data.get('is_verified'))
         self.assertNotEqual(response.data.get('verification_code'), None)
     
-    """
+
     def test_retrieve_verification(self):
         data = {'username': 'Alonso', 'email': 'alonso.moreno@mailinator.com', 'password': 'qwerty'}
         response = self.client.post('/api/create/', data)
@@ -32,5 +32,4 @@ class SignUpTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertTrue(response.data.get('is_verified'))
         self.assertEqual(response.data.get('verification_code'), 'EXPIRED')
-    """
     
